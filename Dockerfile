@@ -1,4 +1,4 @@
-FROM python:3.12-slim as builder
+FROM python:3.12-slim AS builder
 RUN useradd -rm -d /home/user -u 1001 user && \
     mkdir -p /home/user/app && \
     chown -R user /home/user/app
@@ -24,7 +24,7 @@ USER user
 
 COPY --from=builder /home/user/app/ /home/user/app/
 ENV PATH=/home/user/app/.venv/bin:$PATH
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONUNBUFFERED=1
 
 WORKDIR /home/user/app
 
