@@ -5,7 +5,7 @@ router = APIRouter(tags=["System"])
 
 @router.get("/")
 def root():
-    return {"message": "Welcome to the JoyEnergy "}
+    return {"message": "Welcome to the JoyEnergy"}
 
 
 @router.get("/health")
